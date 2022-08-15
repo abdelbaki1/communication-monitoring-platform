@@ -1,0 +1,97 @@
+<div class="header">
+    <!-- <div class="des">
+    <div class="container-overlap ng">
+     
+    <div class="media-body media-middle">
+      <p class="media-heading ">{{DATA[0].detail.id_manager}}</p>
+      <p >nom de projets:{{DATA[0].detail.noun}}</p>
+    </div>
+    </div>
+        <div class="description">
+          <h4>
+              About
+          </h4>
+          <div class="card-body">
+            <p>{{DATA[0].detail.Descrip}}</p>
+          </div>
+      </div>
+      </div>
+      <div class="stat">
+        <div class="stat1">
+              <div class="card-box"><i class="icon-layers float-right text-muted"></i>
+                             <h6 class=" text-uppercase mt-0">repports written</h6>
+                             <h2 class="" data-plugin="counterup">1,587</h2>
+                             <span class="badge badge-custom">+11% </span>
+    </div>
+                      <div class="card-box"><i class="icon-layers float-right text-muted"></i>
+                        <h2 class="" data-plugin="counterup">1,587</h2>
+                          <p class=" text-uppercase mt-0">worker included</p>
+                         
+                          <span class="badge badge-custom">+11% </span>
+                          </div>
+        </div>
+       <div class="stat1">
+          <div class="card-box"><i class="icon-layers float-right text-muted"></i>
+              <h6 class=" text-uppercase mt-0">subproject created</h6>
+              <h2 class="" data-plugin="counterup">1,587</h2>
+              <span class="badge badge-custom">+11% </span>
+              <span class="">From previous period</span>
+            </div>
+        <div class="card-box"><i class="icon-layers float-right text-muted"></i>
+            <h6 class=" text-uppercase mt-0"> avrg daily repporting </h6>
+            <h2 class="" data-plugin="counterup">1,587</h2><span class="badge badge-custom">+11% </span><span class="text-muted">From previous period</span></div>    
+       </div>
+      </div>
+    </div>
+      <div class="assembling"> -->
+       <div class="container bootstrap-snippet header-container">
+    <div class="bg-white">
+      <div class="container py-5">
+        <div class="media col-md-10 col-lg-8 col-xl-7 p-0 my-4 mx-auto">
+          <div class="media-body ml-5">
+            <p >{{DATA[0].detail.noun}}</p>
+
+            <div class="text-muted mb-4">
+              <p>{{DATA[0].detail.Descrip}}</p>
+
+            </div>
+            <p>daedline {{DATA[0].detail.deadline}}</p>
+            <p>activated {{DATA[0].detail.activated}}</p>
+          </div>
+        </div>
+      </div>
+      <hr class="m-0">
+      
+    </div>
+</div>
+</div>
+        
+        
+          <div class="card-header">
+            <h4>Project Details</h4>
+          </div>
+          <div class="card-body">
+            <div class="media-list position-relative">
+              <div class="table-responsive" id="project-team-scroll" tabindex="1" style="height: 400px; overflow: hidden; outline: none;">
+                <table class="table table-hover table-xl mb-0">
+                  <thead>
+                    <tr>
+                      <th>SUbProject Name</th>
+                      <th>Employees</th>
+                      <th>Deadline</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let s of DATA[0].subproject " >
+                      <td class="text-truncate">Project  {{s.noun}}</td>
+                      <td class="text-truncate">
+                         {{s.id_worker}}
+                      </td>
+                      <td class="text-truncate">{{s.deadline}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+            

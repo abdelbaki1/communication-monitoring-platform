@@ -1,0 +1,15 @@
+.description{
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+  p,h1{
+    font-size: 140%;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+  .contact{
+    display: inline-grid;
+    width: 30%;
+    padding: 45px;
+  
+  }

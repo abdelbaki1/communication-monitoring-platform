@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-uppercase mb-0">Manage Users</h5>
+                </div>
+                <div class="table-responsive">
+                    <table class="table no-wrap user-table mb-0">
+                      <thead>
+                        <tr>
+                          <th scope="col" class="border-0 text-uppercase font-medium pl-4">#</th>
+                          <th scope="col" class="border-0 text-uppercase font-medium">title</th>
+                          <th scope="col" class="border-0 text-uppercase font-medium">attolier</th>
+                          <th scope="col" class="border-0 text-uppercase font-medium">nounsubproject</th>
+                          <th scope="col" class="border-0 text-uppercase font-medium">Added</th>
+                          <th scope="col" class="border-0 text-uppercase font-medium">type</th>
+                          <th scope="col" class="border-0 text-uppercase font-medium">Manager</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let x of repports;index as i ">
+                          <td class="pl-4">{{i+1}}</td>
+                          <td>
+                              <!-- <h5 class="font-medium mb-0">TITLE</h5> -->
+                              <p class="text-muted">{{x.title}}</p>
+                          </td>
+                          <td>
+                              <p class="text-muted">{{x.id_worker}}</p><br>
+                              
+                          </td>
+                          <td>
+                              
+                              <p class="text-muted"> pump production </p>
+                          </td>
+                          <td>
+                              <p class="text-muted">{{x.written}}</p><br>
+                              
+                          </td>
+                          <td>
+                            <p class="text-muted">{{x.typ}}</p><br>
+                          </td>
+                          <td>
+                            <button type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle"><img class="img" [routerLink]="['../repport']" [queryParams]="{id:repports[i].id_repport}" src="../../assets/e-learning.png" alt=""></button>
+                            <button type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2" (click)="deleteReport(x.id_repport,i-1)"><img class="img" src="../../assets/trash-can.png" alt=""> </button>
+                            <button type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><img class="img" [routerLink]="['../profile']" [queryParams]="{id_profile:x.id_manager}" src="../../assets/users.png" alt=""></button>
+                            <button type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><img class="img" [routerLink]="['../project']" [queryParams]="{p:x.id_project}" src="../../assets/book.png" alt=""></button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    

@@ -1,0 +1,57 @@
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<section class="testimonial py-5" id="testimonial">
+    <div class="container">
+      <div  class="bg-primary text-white text-center ">
+        <div class="card-body">
+            <img src="http://www.ansonika.com/mavia/img/registration_bg.svg">
+            <h2 class="py-3">FiLL THE REPORT</h2>
+        </div>
+      </div>
+            
+       <div class=" py-5 border">
+            <h4 class="headers">Please fill with your details</h4>
+             <form #f1="ngForm" [formGroup]="f" >
+               <div style="display: flex;justify-content: space-around;width: 100%;">
+                      <div class="detaill">                
+                        <div >
+                        <input  formControlName="title"  placeholder="Titre" class="form-control" type="text">
+                        </div>
+                        <div >
+                                  
+                        <select formControlName="typ" aria-label="Default select example" class="form-select" >
+                          <option [selected]="true" >Type du rapport</option>
+                          <option> Maintenace</option>
+                          <option> progress </option>
+                          <option> Complaint</option>
+                          <option> Feedback</option>
+                        </select>
+                        </div>
+                 
+                          <div >
+                              <input formControlName="id_worker" id="Mobile No." name="Mobile No." placeholder="workerid" class="form-control" required="required" type="text">
+                         </div>
+                        <div >
+                        <input formControlName="id_sub_project" id="Mobile No." name="Mobile No." placeholder="subid" class="form-control" required="required" type="text">
+                         </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                                  <label class="form-check-label" for="invalidCheck2">
+                                    <small>By clicking Submit, you agree to our Terms & Conditions, Visitor Agreement and Privacy Policy.</small>
+                                  </label>
+                                </div>
+                                
+                    </div>
+                    <div style="width: 65%;">
+                      
+                      <textarea formControlName="des" id="comment" name="comment" cols="40" rows="25" class="form-control" placeholder="description"></textarea>
+                      <p><button (click)="send(f1)"  type="button" class="btn btn-danger headers">Submit</button></p>
+
+                    </div>
+                    
+                </div>
+                    
+              </form>
+       </div>
+     </div>
+ </section>

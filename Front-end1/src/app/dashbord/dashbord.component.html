@@ -1,0 +1,124 @@
+<div style="display: flex;width: 100vw;">
+   
+        <div class="content">
+            
+            <!--summary-->
+             
+              <div class="sum">
+                  <div class="cards">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                      <div class="mini-stat clearfix bg-twitter rounded">
+                          <div class="mini-stat-info">
+                              <p>0</p>
+                              <p> project unfinished</p>
+                          </div>
+                      
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                      <div class="mini-stat clearfix bg-twitter rounded">
+                          <div class="mini-stat-info">
+                              <p>2</p>
+                                <p>reports is written daily</p>
+                          </div>
+                      
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                      <div class="mini-stat clearfix bg-twitter rounded">
+                          <div class="mini-stat-info">
+                              <p>2</p>
+                              <p>total reporting </p> 
+                          </div>
+                      
+                        </div>
+                    </div>
+                    </div>
+                 
+                </div>
+               
+              <div class="content-2">
+                <!--recent_subproject-->
+                <div class="recent-payments">
+                    <div class="row">
+                        <!-- column -->
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Latest subprojects</h4>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th class="border-top-0">NAME</th>
+                                                <th class="border-top-0">STATUS</th>
+                                                <th class="border-top-0">DATE</th>
+                                                <!-- <th class="border-top-0">PRICE</th> -->
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let sub of subprojects">
+                                              
+                
+                                                <td class="txt-oflo">{{sub.noun}}</td>
+                                                <td><h6 class="label label-success label-rounded">Active{{Isdead(sub.DATE)}}</h6> </td>
+                                                <td class="txt-oflo">{{sub.activated}}</td>
+                                                <!-- <td><span class="font-medium">{{sub.deadline}}</span></td> -->
+                                            </tr>
+                
+                                        </tbody>
+                                    </table>
+                                    <div class="text-center">
+                                      <a [routerLink]="['/projects']" [queryParams]="{worker:id}" class="btn btn-primary btn-round">
+                                        View All
+                                      </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            
+                <div class="new-students">
+                    <div class="col-md-12 col-12 col-sm-12">
+                        <div class="card">
+                          <div class="card-header">
+                            <h4>Recent Activities</h4>
+                          </div>
+                          <div class="card-body">
+                            <ul class="list-unstyled list-unstyled-border">
+                              <!-- <li class="media">
+                                
+                                <div class="media-body">
+                                  
+                                  <div class="media-title">Farhan A Mujib</div>
+                                  <small>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</small>
+                                </div>
+                              </li> -->
+                              <li *ngFor="let r of repports" class="media">
+                                
+                                <div class="media-body">
+                                  
+                                  <div class="media-title"><h1>{{r.title}}</h1></div>
+                                  <small>{{r.des | summry }}</small>
+                                </div>
+                              </li>
+                              
+                            </ul>
+                            <div class="text-center">
+                              <a href="#"  [routerLink]="['viewreports']" [queryParams]="{'worker':856585}" class="btn btn-primary btn-round">
+                                View All
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                
+               </div>
+             
+            </div>
+            
+    </div>
+</div>

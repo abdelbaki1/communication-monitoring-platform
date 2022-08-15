@@ -1,0 +1,76 @@
+<div class="mt-5 container " >
+    <div class=" card">
+        <div class="card-header text-white bg-info">  
+            Créer un projet 
+        </div>
+        <div class="card-body">
+            <div class="content">
+            <form #f1="ngForm" [formGroup]="f">
+                <div class="form-group row mb-2">
+                    <label for="" class="col-md-2 col-form-label"> Non de projet    </label>
+                    <div class="col-md-8">  <input type="text" formControlName="noun" class="form-control" placeholder="Non(Obligatoire)"> </div>
+                    <p *ngIf="f.get('noun')?.touched&&f.get('noun')?.invalid" class="col-md-8 alert alert danger">noun required </p>
+
+                </div>
+                <!-- <div class="form-group row mb-2">
+                    <label for="" class="col-md-2 col-form-label"> ID </label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" formControlName="id_project" placholder="ID(Obligatoire)">
+                    </div>
+                    
+                </div> -->
+                <div class="form-group row mb-2">
+                    <label for="" class="col-md-2 col-form-label">
+                        Deadline
+                    </label>
+                    <div class="col-md-8">
+                        <input type="DATE" formControlName="deadline" class="form-control" placeholder=" Deadline(Obligatoire)">
+                        <p *ngIf="f.get('noun')?.touched&&f.get('noun')?.invalid" class="col-md-8 alert alert danger">noun required </p>
+
+                    </div>
+                </div>
+                    <div class="form-group row mb-2 ">
+                        <label for="" class="col-md-2 col-form-label">
+                        Description
+
+                    </label>
+                        <div class="col-md-8">
+                        <textarea name="" [readonly]="project.length==0"  formControlName="Descrip" id="" cols="30" rows="10" class="form-control"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+            
+                <div style="width: 40%;" class="accordion accordion-flush" id="accordionFlushExample">
+                    <h1>LISTE DES SOUS PROJET</h1>
+                    <div *ngFor="let sub of project;index as i" class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingOne">
+                        <button id="but" #b (click)="active(b,i)" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                          {{sub.name}}
+                        </button>
+                      </h2>
+                      <div id="flush-collapseOne"  class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                         <div class="accordion-body" >description :</div>
+                        <div class="accordion-body">{{sub.description | summry}}</div>
+                        
+                        <div class="accordion-body" >worker id :{{sub.id_worker}}</div>
+                        <p>
+                            <button class=" mx-4  bg-info"type="submit "  (click)="delete(i,i+1)" >supprimer</button>
+                            <button class=" mx-4  bg-info"type="submit " routerLink="/createSubproject" (click)="modify()" >modifier</button>
+                        </p>
+                        </div>
+
+                    </div>
+                    <p><a  class="btn btn-outline-secondary mx-4  bg-info"type="submit " routerLink="createSubproject" [queryParams]="{id_project:f.value['id_project'],index:project.length+1}" >Ajouter un Sous projet</a></p>
+                  </div> 
+                  
+            
+        </div>
+                    <p class="form-group row-mb-2">
+                        
+                            <button class="btn btn-outline-secondary mx-4  bg-info" type="submit " (click)="post(f1)" >Sauvegarder</button>
+                            <button class="btn btn-outline-secondary  bg-info" (click)="home()"  >Annuler</button>
+                        
+                    </p>
+    </div>
+            </div>

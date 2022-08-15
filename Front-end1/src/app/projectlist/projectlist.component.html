@@ -1,0 +1,72 @@
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+<hr>
+<div class="container bootstrap snippets bootdey">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-box no-header clearfix">
+                <div class="main-box-body clearfix">
+                    <div class="table-responsive">
+                        <table class="table user-list">
+                            <thead>
+                                <tr>
+                                    <th><span>#</span></th>
+                                <th><span>Subproject</span></th>
+                                <th><span>Created</span></th>
+                                <th><span>deadLine</span></th>
+                                <th class="text-center"><span>Status</span></th>
+                                <th><span>Manager</span></th>
+                                
+                                
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                <tr *ngFor="let sub of subproject;index as i">
+                                    <td>
+                                        {{i+1}}
+                                    </td>
+                                    <td>
+                                        <a href="#" class="user-link">{{sub.noun}}</a>
+                                        
+                                    </td>
+                                    <td>{{sub.activated}}</td>
+                                    <td>{{sub.deadline}}</td>
+                                    
+                                    <td class="text-center">
+                                        <span class="label label-default">pending</span>
+                                    </td>
+                                    <td>
+                                        <a href="#">test@baki.com 
+                                        </a>
+                                    <td style="width: 20%;">
+                                        <p>
+                                        <a href="#" class="table-link text-info">
+                                            <span class="fa-stack">
+                                               <img src="../../assets/users.png" alt="">
+                                               
+
+                                                
+                                            </span>
+                                        </a>
+                                        <a href="#" class="table-link danger">
+                                            <span class="fa-stack">
+                                               <img src="../../assets/book-alt.png" alt="">
+                                            </span>
+                                        </a>
+                                        <a href="#" class="table-link danger">
+                                            <span class="fa-stack">
+                                               <img src="../../assets/trash-can.png" alt="">
+                                            </span>
+                                        </a>
+                                    </p>
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
